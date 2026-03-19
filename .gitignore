@@ -31,3 +31,14 @@ build/
 
 ### VS Code ###
 .vscode/
+# Terraform (VERY IMPORTANT)
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# Terraform provider binaries
+*.exe
+*.zip
+*.tar.gz
+
