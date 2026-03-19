@@ -48,7 +48,7 @@ public class Applications {
     public String getApplication_date() {
         return application_date;
     }
-
+    
     public void setApplication_date(String application_date) {
         this.application_date = application_date;
     }
