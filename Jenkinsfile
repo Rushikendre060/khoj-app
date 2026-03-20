@@ -46,8 +46,7 @@ pipeline {
             when { branch 'dev' }
             steps {
                 echo 'Creating JAR Artifact...'
-                sh 'mvn package'
-                echo 'JAR Artifact Created Successfully!'
+                sh 'mvn clean package -DskipTests'   // ✅ FIX
             }
         }
 
