@@ -88,9 +88,9 @@ pipeline {
 
                     sh """
                     set -e
-                    sed -i 's|image:.*|image: ${ECR_URL}/khoj-app:${IMAGE_TAG}|g' ${yamlFile}   // ✅ FIX 2
+                    sed -i 's|image:.*|image: 797748030688.dkr.ecr.ap-south-1.amazonaws.com/khoj-app:${IMAGE_TAG}|g' kubernetes/dev/05-deployment.yaml  
                     grep ${IMAGE_TAG} ${yamlFile} || echo "Replacement failed in ${yamlFile}"
-                    aws eks update-kubeconfig --name khoj-eks --region ${REGION}                // ✅ FIX 3
+                    aws eks update-kubeconfig --name khoj-eks --region ${REGION}                
                     kubectl apply -f kubernetes/dev/
                     kubectl rollout status deployment khoj-app -n dev
                     """
